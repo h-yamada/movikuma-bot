@@ -7,6 +7,8 @@ https://www.movikuma.tv/
 ## Overview
 provide popular movies of Movikuma by Facebook Messenger, written in golang.
 
+Facebook Messenger : [quickstart](https://developers.facebook.com/docs/messenger-platform/quickstart)
+
 ## Installation
 
 ```
