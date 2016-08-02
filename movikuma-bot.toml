@@ -1,0 +1,9 @@
+#this is sample
+
+[facebook]
+token = "<facebook token>"
+
+[movikuma]
+elasticsearch = "https://xxxx"
+detail_uri = "https://www.movikuma.tv/m/"
+image_uri = "https://xxxx.cloudfront.net/m/"
