@@ -21,21 +21,15 @@ func PostWebHook(c *gin.Context) {
 		c.String(http.StatusBadRequest, err.Error())
 		return
 	}
-	log.Println(receiver)
 
 	for _, messaging := range receiver.Entry[0].Messaging {
-		log.Println(messaging.Sender.ID)
-		log.Println(messaging.Message.Text)
-
-		fb := NewFacebookMessenger(Conf.Facebook.Token)
-
-		var m interface{}
+		log.Printf("senderid=%s message=%", messaging.Sender.ID, messaging.Message.Text)
 
 		movikuma := new(Movikuma)
 		movikumaList, _ := movikuma.Search(messaging.Message.Text)
 
-		log.Println(movikumaList)
-
+		var m interface{}
+		fb := NewFacebookMessenger(Conf.Facebook.Token)
 		if movikumaList != nil && len(movikumaList) > 0 {
 			elements := []Element{}
 			for i := 0; i < len(movikumaList); i++ {

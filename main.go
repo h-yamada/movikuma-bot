@@ -35,9 +35,4 @@ func init() {
 	if _, err := toml.DecodeFile(configFile, &Conf); err != nil {
 		log.Println(err)
 	}
-	log.Println("FB Token:", Conf.Facebook.Token)
-	log.Println("ElasticSearchUri:", Conf.Movikuma.ElasticSearchUri)
-	log.Println("DetailPageUri:", Conf.Movikuma.DetailPageUri)
-	log.Println("ImageUri:", Conf.Movikuma.ImageUri)
-
 }
