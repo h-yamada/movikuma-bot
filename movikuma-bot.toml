@@ -7,3 +7,7 @@ token = "<facebook token>"
 elasticsearch = "https://xxxx"
 detail_uri = "https://www.movikuma.tv/m/"
 image_uri = "https://xxxx.cloudfront.net/m/"
+
+[ybi]
+endpoint = "http://in.ybi.idcfcloud.net/postback/v3/event/<db>/<table>"
+apikey = "<Write-Only API keys>"

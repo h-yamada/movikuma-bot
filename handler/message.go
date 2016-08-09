@@ -28,6 +28,8 @@ func PostWebHook(c *gin.Context) {
 		movikuma := new(Movikuma)
 		movikumaList, _ := movikuma.Search(messaging.Message.Text)
 
+		SendLogToYBI(messaging.Sender.ID, messaging.Message.Text)
+
 		var m interface{}
 		fb := NewFacebookMessenger(Conf.Facebook.Token)
 		if movikumaList != nil && len(movikumaList) > 0 {

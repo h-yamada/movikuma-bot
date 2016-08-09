@@ -11,6 +11,7 @@ var Conf Config
 type Config struct {
 	Facebook facebook
 	Movikuma movikuma
+	YBI      ybi
 }
 
 type facebook struct {
@@ -21,6 +22,11 @@ type movikuma struct {
 	ElasticSearchUri string `toml:"elasticsearch"`
 	DetailPageUri    string `toml:"detail_uri"`
 	ImageUri         string `toml:"image_uri"`
+}
+
+type ybi struct {
+	Endpoint string `toml:"endpoint"`
+	ApiKey   string `toml:"apikey"`
 }
 
 func (c Config) Validate() error {
@@ -36,6 +42,12 @@ func (c Config) Validate() error {
 	}
 	if !validator.IsURL(c.Movikuma.ImageUri) {
 		return errors.New("image_uri")
+	}
+	if !validator.IsURL(c.YBI.Endpoint) {
+		return errors.New("YBI endpoint")
+	}
+	if validator.IsNull(c.YBI.ApiKey) {
+		return errors.New("YBI api key")
 	}
 	return nil
 }
