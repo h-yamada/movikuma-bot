@@ -13,7 +13,6 @@ Facebook Messenger : [quickstart](https://developers.facebook.com/docs/messenger
 
 ```
 go get github.com/h-yamada/movikuma-bot
-go install github.com/h-yamada/movikuma-bot
 ```
 
 - Libraries
